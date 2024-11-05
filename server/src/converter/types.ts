@@ -1,8 +1,27 @@
-import { SchemaSource } from "./schemaSource";
+export interface PluginConfig {
+  acceptedNodeEnvs: string[];
+  verboseLogs: boolean;
+  alwaysAddEnumSuffix: boolean;
+  contentTypesToIgnore: (string | RegExp)[];
+  alwaysAddComponentSuffix: boolean;
+  usePrettierIfAvailable: boolean;
+}
+
+export enum SchemaSource {
+    Component,
+    Api,
+    Common,
+}
+
+export enum SchemaType {
+    Standard,
+    Plain,
+    NoRelations,
+    AdminPanelLifeCycle,
+}
+
 
 export interface SchemaInfo {
-  schemaPath: string;
-  destinationFolder: string;
   schema: any;
   schemaName: string;
   pascalName: string;
@@ -10,15 +29,10 @@ export interface SchemaInfo {
   source: SchemaSource;
   interfaceAsText: string;
   plainInterfaceAsText: string;
-  noRelationsInterfaceAsText: string;
-  adminPanelLifeCycleRelationsInterfaceAsText: string;
-  dependencies: string[];
   enums: string[];
 }
 
 const defaultSchemaInfo: SchemaInfo = {
-  schemaPath: '',
-  destinationFolder: '',
   schema: undefined,
   schemaName: '',
   pascalName: '',
@@ -26,9 +40,6 @@ const defaultSchemaInfo: SchemaInfo = {
   source: SchemaSource.Common,
   interfaceAsText: '',
   plainInterfaceAsText: '',
-  noRelationsInterfaceAsText: '',
-  adminPanelLifeCycleRelationsInterfaceAsText: '',
-  dependencies: [],
   enums: [],
 };
 
