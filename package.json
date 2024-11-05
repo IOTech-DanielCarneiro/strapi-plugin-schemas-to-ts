@@ -44,7 +44,7 @@
         "displayName": "Schemas to TS",
         "description": "A Strapi plugin that automatically generates Typescript interfaces from Strapi contentTypes and components."
     },
-    "name": "@dc/strapi-plugin-schemas-to-ts",
+    "name": "@danielggcarneiro/strapi-plugin-schemas-to-ts",
     "description": "A Strapi plugin that automatically generates Typescript interfaces from Strapi contentTypes and components.",
     "author": "IOTech-DanielCarneiro <danielcarneiro@iotech.pt>",
     "license": "MIT",
